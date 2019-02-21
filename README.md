@@ -18,6 +18,9 @@ Configuring and persisting users is an exercise left for the user. The suggested
 for `/etc/passwd`, `/etc/shadow`, and `/home`, in addition to any other binds done for the purpose of
 the actual backups, and using `docker exec` to generate those configurations.
 
+Accounts are locked by the `!` flag in shadow, so you need to change it to `*` after creating the
+account (or otherwise unlock it).
+
 Keep in mind that, when binding file systems from outside docker into this container, you need to
 match the user/group IDs as appropriate to ensure users retain access.
 
